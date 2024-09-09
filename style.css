@@ -1,15 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .align {
     display: flex;
     justify-content: center;
   }
+
   .container {
-    background-color: black;
-    
+    background-color: white;
+    border: 0.3rem solid;
+    border-color: black;
     padding: 1rem;
     border-radius: 10px;
   }
+
   .display {
-    background-color: greenyellow;
+    background-color: white;
     height: 40px;
     border-radius: 10px;
     text-align: right;
@@ -18,45 +29,52 @@
     width: 17rem;
     overflow-x: hidden
   }
+
   .displayContainer {
     display: flex;
     justify-content: center;
-    
+    border: 0.2rem solid;
+    border-color: black;
+    border-radius: 10px;
   }
+
   .first {
     display: flex;
     flex-direction: row;
     column-gap: 10px;
     justify-content: center;
     margin-top: 1rem;
-  
   }
+
   .second{
     display: flex;
     flex-direction: row;
     column-gap: 10px;
     justify-content: center;
   }
+
   .clear {
     width: 60px;
     height: 40px;
-    background-color: red;
+    background-color: orange;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
     color: white;
     border-radius: 10px;
   }
+
   .blue {
     width: 60px;
     height: 40px;
-    background-color: blue;
+    background-color: orange;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
     color: white;
     border-radius: 10px;
   }
+
   .white {
     width: 60px;
     height: 40px;
@@ -66,39 +84,39 @@
     text-align: center;
     border-radius: 10px;
   }
+
   .green {
     width: 60px;
     height: 40px;
-    background-color: greenyellow;
+    background-color: orange;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
     border-radius: 10px 10px 0 0;
-    border:greenyellow
+    border: orange;
   }
+
   .greenb {
     width: 60px;
     height: 55px;
-    background-color: greenyellow;
+    background-color: orange;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
-    border: greenyellow;
-  
-    
+    border: orange; 
   }
+
   .greenc {
     width: 60px;
     height: 40px;
-    background-color: greenyellow;
+    background-color: orange;
     font-size: 28px;
     font-weight: bold;
     text-align: center;
     border-radius: 0 0 10px 10px;
     padding-top: 15px;
-  
-    
   }
+
   .black{
        width: 60px;
     height: 40px;
@@ -106,8 +124,8 @@
     font-weight: bold;
     text-align: center;
     border-radius: 10px;
-  
   }
+
   .one{
       margin-top: 15px;
   }
