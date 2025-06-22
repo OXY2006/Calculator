@@ -1,92 +1,66 @@
-// functions for calculator operators
-function addNumber(a, b) {
-    let output = a + b
-    return output
+function operate(a, operator, b) {
+  a = parseFloat(a);
+  b = parseFloat(b);
+  switch (operator) {
+    case '+': return a + b;
+    case '-': return a - b;
+    case '*': return a * b;
+    case '/': return b === 0 ? 'Err' : a / b;
   }
-  
-  function subtractNumber(a, b) {
-    let output = a - b
-    return output
+}
+
+let first = '', second = '', op = '', resetNext = false;
+const display = document.getElementById('display');
+
+function updateDisplay(val) {
+  display.textContent = val;
+}
+
+document.querySelector('.characters').addEventListener('click', e => {
+  if (!e.target.classList.contains('btn')) return;
+  const val = e.target.textContent;
+
+  if (e.target.id === 'clearBtn') {
+    first = second = op = '';
+    updateDisplay('0');
+    return;
   }
-  function multiplyNumber(a, b) {
-    let output = a * b
-    return output
+
+  if (e.target.classList.contains('operator')) {
+    if (first && op && second) {
+      first = operate(first, op, second).toString();
+      updateDisplay(first);
+      second = '';
+    }
+    op = val;
+    resetNext = true;
+    return;
   }
-  
-  function divideNumber(a, b) {
-    if (b === 0) {
-      return "cannot divide by 0"
+
+  if (e.target.id === 'equalBtn') {
+    if (first && op && second) {
+      const result = operate(first, op, second);
+      updateDisplay(result);
+      first = result.toString();
+      op = '';
+      second = '';
+      resetNext = true;
+    }
+    return;
+  }
+
+  if (e.target.classList.contains('number')) {
+    if (resetNext) {
+      display.textContent = '';
+      resetNext = false;
+    }
+
+    if (!op) {
+      first += val;
+      updateDisplay(first);
     } else {
-      return a / b
+      second += val;
+      updateDisplay(second);
     }
   }
-  
-  let firstN = ""
-  let secondN = ""
-  let operator = ""
-  let displayV = ""
-  
-  function operate(firstN, operator, secondN) {
-    firstN = parseFloat(firstN)
-    secondN = parseFloat(secondN)
-    if (operator === "+") {
-      return addNumber(firstN, secondN)
-    } else if (operator === "-") {
-      return subtractNumber(firstN, secondN)
-    } else if (operator === "*") {
-      return multiplyNumber(firstN, secondN)
-    } else if (operator === "/") {
-      return divideNumber(firstN, secondN)
-    }
-  }
-  
-  let display = document.querySelector("#display")
-  let clearBtn = document.querySelector("#clearBtn")
-  function clear() {
-    display.textContent = ""
-  }
-  clearBtn.addEventListener("click", clear)
-  
-  let numbers = document.querySelectorAll("#number")
-  numbers.forEach((number) => {
-    number.addEventListener("click", () => {
-      display.textContent += number.textContent
-      displayV = display.textContent
-      if (!operator) {
-        firstN = displayV
-      
-      } else {
-        secondN = displayV
-        
-      }
-    })
-  })
-  let operators = document.querySelectorAll(".blue")
-  
-  operators.forEach((blue) => {
-    blue.addEventListener("click", () => {
-      if (firstN && !operator) {
-        operator = blue.textContent
-        display.textContent = ""
-      } else if (firstN && operator && secondN) {
-      
-        let output = operate(firstN, operator, secondN)
-        display.textContent = output
-        firstN = output
-        secondN = ""
-        operator = blue.textContent 
-        display.textContent = "" 
-      }
-    })
-  })
-  let equalBtn = document.querySelector(".greenb")
-  equalBtn.addEventListener("click", () => {
-    if (firstN && operator && display.textContent) {
-      secondN = display.textContent
-      let output = operate(firstN, operator, secondN)
-      display.textContent = output
-      firstN = output
-      secondN = ""
-      operator = ""
-    }
-  })
+});

@@ -1,131 +1,86 @@
 body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  background: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: url('/rm373batch13-086.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
-.align {
-    display: flex;
-    justify-content: center;
-  }
+.container {
+  background-color: #222;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 300px;
+  background-color: #222;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  width: 300px;
+  border: 3px solid #fff;
+  border: 3px solid #00f0ff;
+  box-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(0, 240, 255, 0.3);
+}
 
-  .container {
-    background-color: white;
-    border: 0.3rem solid;
-    border-color: black;
-    padding: 1rem;
-    border-radius: 10px;
-  }
+.displayContainer {
+  margin-bottom: 20px;
+}
 
-  .display {
-    background-color: white;
-    height: 40px;
-    border-radius: 10px;
-    text-align: right;
-    font-size:30px;
-    font-weight: bold;
-    width: 17rem;
-    overflow-x: hidden
-  }
+.display {
+  background-color: #000;
+  color: #0f0;
+  font-size: 2.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  text-align: right;
+  height: 60px;
+  overflow-x: auto;
+}
 
-  .displayContainer {
-    display: flex;
-    justify-content: center;
-    border: 0.2rem solid;
-    border-color: black;
-    border-radius: 10px;
-  }
+.characters .row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
 
-  .first {
-    display: flex;
-    flex-direction: row;
-    column-gap: 10px;
-    justify-content: center;
-    margin-top: 1rem;
-  }
+.btn {
+  flex: 1;
+  margin: 5px;
+  padding: 15px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
 
-  .second{
-    display: flex;
-    flex-direction: row;
-    column-gap: 10px;
-    justify-content: center;
-  }
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
 
-  .clear {
-    width: 60px;
-    height: 40px;
-    background-color: orange;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
-  }
+.orange {
+  background-color: #f57c00;
+  color: #fff;
+}
 
-  .blue {
-    width: 60px;
-    height: 40px;
-    background-color: orange;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    color: white;
-    border-radius: 10px;
-  }
+.equal {
+  background-color: #4caf50;
+  color: white;
+}
 
-  .white {
-    width: 60px;
-    height: 40px;
-    background-color: white;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 10px;
-  }
-
-  .green {
-    width: 60px;
-    height: 40px;
-    background-color: orange;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 10px 10px 0 0;
-    border: orange;
-  }
-
-  .greenb {
-    width: 60px;
-    height: 55px;
-    background-color: orange;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    border: orange; 
-  }
-
-  .greenc {
-    width: 60px;
-    height: 40px;
-    background-color: orange;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 0 0 10px 10px;
-    padding-top: 15px;
-  }
-
-  .black{
-       width: 60px;
-    height: 40px;
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 10px;
-  }
-
-  .one{
-      margin-top: 15px;
-  }
+.number {
+  background-color: #e0e0e0;
+  color: black;
+}
