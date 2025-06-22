@@ -6,7 +6,7 @@ This is a simple and modern web-based calculator built using HTML, CSS, and Java
 
 2) Real-time display updates as you input values
 
-3)Clear and equals buttons for better control
+3) Clear and equals buttons for better control
 
 4) Responsive layout compatible with desktop and mobile
 
